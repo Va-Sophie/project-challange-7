@@ -1,0 +1,19 @@
+.background {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 85%;
+  margin: 30px auto;
+  padding: 10px 20px;
+}
+#heading {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.no-gutter > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+h2 {
+  font-size: smaller;
+}
