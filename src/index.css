@@ -22,7 +22,7 @@ h2.h2 {
 }
 li {
   list-style-type: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
 }
 ul.ul {
@@ -42,6 +42,11 @@ h3.h3 {
   text-decoration: none;
   color: lightsalmon;
 }
+#one:hover,
+#two:hover {
+  color: lightskyblue;
+  transition: all 200ms ease;
+}
 div.container {
   padding-left: 0;
   margin-left: 0;
@@ -56,4 +61,16 @@ li.weather {
 #description {
   font-weight: 200;
   font-size: 25px;
+}
+h4.h4 {
+  margin-left: 110px;
+  font-size: 20px;
+}
+#author {
+  text-decoration: none;
+  color: lightsalmon;
+  transition: all 200ms ease;
+}
+#author:hover {
+  color: lightskyblue;
 }
