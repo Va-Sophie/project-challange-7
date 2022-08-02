@@ -12,12 +12,28 @@ function formatDate(day) {
   let hours = day.getHours();
   let minutes = day.getMinutes();
   if (minutes < 10) {
-    let minutes = `0${minutes}`;
+    let minutes = `0${day.getMinutes()}`;
+    return minutes;
   }
   if (hours < 10) {
-    let hours = `0${hours}`;
+    let hours = `0${day.getHours()}`;
+    return hours;
   }
   let moment = `On ${[DaysofWeek[day.getDay()]]} at ${hours}:${minutes}`;
   return moment;
 }
 document.getElementById(`data`).innerHTML = `${formatDate(now)}`;
+////
+function showTemperature(element) {
+  let temp = Math.round(element.data.main.temp);
+  document.getElementById(`h3`).innerHTML = `${temp}`;
+}
+function humidity(element) {
+  let humidity = element.data.main.humidity;
+  document.getElementById(`humidity`).innerHTML = `${humidity}%`;
+}
+let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
+let units = "metric";
+let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=${apiKey}&units=${units}`;
+axios.get(`${ApiUrl}`).then(showTemperature);
+axios.get(`${ApiUrl}`).then(humidity);
