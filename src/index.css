@@ -74,3 +74,14 @@ h4.h4 {
 #author:hover {
   color: lightskyblue;
 }
+#icon {
+  width: 100px;
+  height: 100px;
+}
+#button-addon2 {
+  border-radius: 0px;
+}
+#windSpeed,
+#humidity {
+  color: #14c9f0;
+}
