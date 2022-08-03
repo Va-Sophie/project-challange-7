@@ -21,6 +21,11 @@ function formatDate(day) {
   return moment;
 }
 document.getElementById(`data`).innerHTML = `${formatDate(now)}`;
+//// weather description
+function description(element) {
+  let description = element.data.weather[0].description;
+  document.getElementById("description").innerHTML = `${description}`;
+}
 ////
 function showTemperature(element) {
   let temp = Math.round(element.data.main.temp);
@@ -46,6 +51,7 @@ axios.get(`${ApiUrl1}`).then(showTemperature);
 axios.get(`${ApiUrl1}`).then(humidity);
 axios.get(`${ApiUrl1}`).then(windSpeed);
 axios.get(`${ApiUrl1}`).then(cityname);
+axios.get(`${ApiUrl1}`).then(description);
 ////
 function work() {
   let city = document.getElementById("form").value;
@@ -57,6 +63,7 @@ function work() {
   axios.get(`${ApiUrl}`).then(humidity);
   axios.get(`${ApiUrl}`).then(windSpeed);
   axios.get(`${ApiUrl}`).then(cityname);
+  axios.get(`${ApiUrl}`).then(description);
 }
 document.getElementById("button-addon2").addEventListener("click", work);
 const input = document.querySelector("form");
