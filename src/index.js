@@ -86,6 +86,24 @@ input.onkeydown = (e) => {
   }
 };
 ////
+function currentPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
+  let units = `metric`;
+  let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(`${ApiUrl}`).then(showTemperature);
+  axios.get(`${ApiUrl}`).then(humidity);
+  axios.get(`${ApiUrl}`).then(windSpeed);
+  axios.get(`${ApiUrl}`).then(cityname);
+  axios.get(`${ApiUrl}`).then(description);
+  axios.get(`${ApiUrl}`).then(icon);
+}
+function action() {
+  navigator.geolocation.getCurrentPosition(currentPosition);
+}
+document.getElementById("geolocation").addEventListener("click", action);
+////
 function toFahrenheit(element) {
   let toF = Math.round(Math.round(element.data.main.temp) * 1.8) + 32;
   document.getElementById(`h3`).innerHTML = `${toF}`;
