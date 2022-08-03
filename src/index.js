@@ -26,6 +26,16 @@ function description(element) {
   let description = element.data.weather[0].description;
   document.getElementById("description").innerHTML = `${description}`;
 }
+//// weather icon
+function icon(element) {
+  let codeOfIcon = element.data.weather[0].icon;
+  document
+    .getElementById("icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${codeOfIcon}@2x.png`
+    );
+}
 ////
 function showTemperature(element) {
   let temp = Math.round(element.data.main.temp);
@@ -52,6 +62,7 @@ axios.get(`${ApiUrl1}`).then(humidity);
 axios.get(`${ApiUrl1}`).then(windSpeed);
 axios.get(`${ApiUrl1}`).then(cityname);
 axios.get(`${ApiUrl1}`).then(description);
+axios.get(`${ApiUrl1}`).then(icon);
 ////
 function work() {
   let city = document.getElementById("form").value;
@@ -64,6 +75,7 @@ function work() {
   axios.get(`${ApiUrl}`).then(windSpeed);
   axios.get(`${ApiUrl}`).then(cityname);
   axios.get(`${ApiUrl}`).then(description);
+  axios.get(`${ApiUrl}`).then(icon);
 }
 document.getElementById("button-addon2").addEventListener("click", work);
 const input = document.querySelector("form");
