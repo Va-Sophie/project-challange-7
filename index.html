@@ -27,7 +27,7 @@
           <div class="col-sm-4">
             <ul>
               <li class="weather">
-                <i class="fa-regular fa-sun"></i>
+                <img src="" alt="" id="icon" />
               </li>
               <li class="weather" id="description">Clear sky</li>
             </ul>
@@ -55,13 +55,26 @@
               aria-describedby="button-addon2"
               id="form"
             />
-            <button
-              class="btn btn-outline-info"
-              type="button"
-              id="button-addon2"
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic outlined example"
             >
-              Search
-            </button>
+              <button
+                class="btn btn-outline-info"
+                type="button"
+                id="button-addon2"
+              >
+                Search
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-info"
+                id="geolocation"
+              >
+                Location weather
+              </button>
+            </div>
           </div>
         </form>
       </div>
