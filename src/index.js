@@ -83,7 +83,6 @@ function one() {
   let units = "metric";
   let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(`${ApiUrl}`).then(toFahrenheit);
-  axios.get(`${ApiUrl}`).then(toCelsius);
 }
 function two() {
   let city = document.getElementById("heading").innerHTML;
