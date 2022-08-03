@@ -38,6 +38,7 @@ function cityname(element) {
   let name = element.data.name;
   document.querySelector("h1").innerHTML = `${name}`;
 }
+
 ////
 function work() {
   let city = document.getElementById("form").value;
@@ -58,3 +59,40 @@ input.onkeydown = (e) => {
     work();
   }
 };
+////
+function toFahrenheit(element) {
+  let toF = Math.round(Math.round(element.data.main.temp) * 1.8) + 32;
+  document.getElementById(`h3`).innerHTML = `${toF}`;
+}
+function toCelsius(element) {
+  let toC = Math.round(element.data.main.temp);
+  document.getElementById(`h3`).innerHTML = `${toC}`;
+}
+
+function one() {
+  let city = document.getElementById("heading").innerHTML;
+  city = city.toLowerCase();
+  let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
+  let units = "metric";
+  let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(`${ApiUrl}`).then(toFahrenheit);
+  axios.get(`${ApiUrl}`).then(toCelsius);
+}
+function two() {
+  let city = document.getElementById("heading").innerHTML;
+  city = city.toLowerCase();
+  let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
+  let units = "metric";
+  let ApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(`${ApiUrl}`).then(toCelsius);
+}
+function callFahrenheit(event) {
+  event.preventDefault();
+  one();
+}
+function callCelsius(event) {
+  event.preventDefault();
+  two();
+}
+document.getElementById("two").addEventListener("click", callFahrenheit);
+document.getElementById("one").addEventListener("click", callCelsius);
