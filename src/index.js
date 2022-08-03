@@ -38,7 +38,14 @@ function cityname(element) {
   let name = element.data.name;
   document.querySelector("h1").innerHTML = `${name}`;
 }
-
+////
+let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
+let units = "metric";
+let ApiUrl1 = `https://api.openweathermap.org/data/2.5/weather?q=düsseldorf&appid=${apiKey}&units=${units}`;
+axios.get(`${ApiUrl1}`).then(showTemperature);
+axios.get(`${ApiUrl1}`).then(humidity);
+axios.get(`${ApiUrl1}`).then(windSpeed);
+axios.get(`${ApiUrl1}`).then(cityname);
 ////
 function work() {
   let city = document.getElementById("form").value;
