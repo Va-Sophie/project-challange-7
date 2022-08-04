@@ -51,7 +51,7 @@ function windSpeed(element) {
 }
 function cityname(element) {
   let name = element.data.name;
-  document.querySelector("h1").innerHTML = `${name}`;
+  document.getElementById("heading").innerHTML = `${name}`;
 }
 ////
 let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";

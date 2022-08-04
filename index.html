@@ -20,16 +20,14 @@
   </head>
   <body>
     <div class="background">
-      <h1 id="heading"></h1>
+      <span id="heading"></span>
       <h2 class="h2">Last updated: <span id="data">today</span></h2>
       <div class="container">
         <div class="row no-gutter">
           <div class="col-sm-4">
-            <ul>
-              <li class="weather">
-                <img src="" alt="" id="icon" />
-              </li>
-              <li class="weather" id="description">Clear sky</li>
+            <ul class="ul">
+              <li>Humidity: <span id="humidity"></span></li>
+              <li>Wind: <span id="windSpeed"></span></li>
             </ul>
           </div>
           <div class="col-sm-4">
@@ -39,10 +37,13 @@
               ><span id="fahrenheit"><a href="" id="two"> °F</a></span>
             </h3>
           </div>
+
           <div class="col-sm-4">
-            <ul class="ul">
-              <li>Humidity: <span id="humidity"></span></li>
-              <li>Wind: <span id="windSpeed"></span></li>
+            <ul>
+              <li class="weather">
+                <img src="" alt="" id="icon" />
+              </li>
+              <li class="weather"><span id="description">Clear sky</span></li>
             </ul>
           </div>
         </div>

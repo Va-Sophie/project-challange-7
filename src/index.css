@@ -1,7 +1,7 @@
 .background {
   border: 2px solid black;
   border-radius: 10px;
-  width: 85%;
+  width: 65%;
   margin: 30px auto;
   padding: 10px 20px;
 }
@@ -9,6 +9,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 50px;
   font-weight: bolder;
+  background-color: #cdb4db;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .no-gutter > [class*="col-"] {
   padding-right: 0;
@@ -19,6 +23,10 @@ h2.h2 {
 }
 #data {
   color: black;
+  background-color: #ffcdb2;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
 }
 li {
   list-style-type: none;
@@ -27,9 +35,16 @@ li {
 }
 ul.ul {
   padding-left: 0;
+  margin-top: 30px;
 }
 h3.h3 {
   font-size: 90px;
+  text-align: center;
+  margin-top: 30px;
+  padding-right: 10%;
+  padding-left: 10%;
+  border: 2px solid #8ac926;
+  border-radius: 10px;
 }
 #celsius,
 #fahrenheit {
@@ -40,11 +55,11 @@ h3.h3 {
 #one,
 #two {
   text-decoration: none;
-  color: lightsalmon;
+  color: #14c9f0;
 }
 #one:hover,
 #two:hover {
-  color: lightskyblue;
+  color: #cdb4db;
   transition: all 200ms ease;
 }
 div.container {
@@ -55,33 +70,38 @@ div.row {
   margin-left: 0px;
 }
 li.weather {
-  font-size: 90px;
+  font-size: 10px;
   text-align: center;
 }
 #description {
   font-weight: 200;
   font-size: 25px;
+  background-color: #ffc8dd;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 h4.h4 {
-  margin-left: 8%;
+  margin-left: 18%;
   font-size: 20px;
 }
 #author {
   text-decoration: none;
-  color: lightsalmon;
+  color: #cdb4db;
   transition: all 200ms ease;
 }
 #author:hover {
-  color: lightskyblue;
+  color: #14c9f0;
 }
 #icon {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 #button-addon2 {
   border-radius: 0px;
 }
 #windSpeed,
 #humidity {
-  color: #14c9f0;
+  color: #ffafcc;
+  font-weight: lighter;
 }
