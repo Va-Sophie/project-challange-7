@@ -112,3 +112,28 @@ form {
   padding: 15px;
   padding-bottom: 0;
 }
+#forecastIcon {
+  height: 100px;
+  width: 100px;
+}
+#daysofweek {
+  text-decoration: underline;
+  text-decoration-color: #ff99c8;
+  font-size: 25px;
+  font-weight: 200;
+}
+#min,
+#max {
+  background-color: #ff99c8;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 10px;
+}
+#forecast {
+  border: 2px solid #ff99c8;
+  border-radius: 10px;
+  text-align: center;
+}
+h5.h5 {
+  font-weight: 200;
+}
