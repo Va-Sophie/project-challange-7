@@ -21,6 +21,7 @@ function formatDate(day) {
   return moment;
 }
 document.getElementById(`data`).innerHTML = `${formatDate(now)}`;
+////
 //// weather description
 function description(element) {
   let description = element.data.weather[0].description;
@@ -53,6 +54,47 @@ function cityname(element) {
   let name = element.data.name;
   document.getElementById("heading").innerHTML = `${name}`;
 }
+//// forecast
+function displayForecast(element) {
+  let DaysofWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  function getIndex() {
+    let moment = new Date();
+    function index(element) {
+      let hours = element.getDay();
+    }
+    let one = index(moment);
+    return one;
+  }
+  let weatherForDay = DaysofWeek.forEach(function day() {
+    `<div class="col-sm-2" id="forecast">
+        <div>
+          <span id="daysofweek">${DaysofWeek[getIndex]}</span>
+        </div>
+        <img
+          src="https://openweathermap.org/img/wn/${
+            element.data.daily[getIndex].weather[getIndex].icon
+          }@2x.png"
+          alt=""
+          id="forecastIcon"
+        />
+        <div>
+          <h5 class="h5">
+            <span id="min">${Math.round(
+              element.data.daily[getIndex].temp.min
+            )}</span> / <span id="max">${Math.round(element.data.daily[getIndex].temp.max)}</span>
+          </h5>
+        </div>
+      </div>`;
+  });
+  document.getElementById("displayOfIcons").innerHTML = weatherForDay;
+}
+function APIforecast(element) {
+  let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
+  let lon = element.data.coord.lon;
+  let lat = element.data.coord.lat;
+  let ApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=daily&appid=${apiKey}`;
+  axios.get(`${ApiUrl}`).then(displayForecast);
+}
 ////
 let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
 let units = "metric";
@@ -63,6 +105,7 @@ axios.get(`${ApiUrl1}`).then(windSpeed);
 axios.get(`${ApiUrl1}`).then(cityname);
 axios.get(`${ApiUrl1}`).then(description);
 axios.get(`${ApiUrl1}`).then(icon);
+axios.get(`${ApiUrl1}`).then(APIforecast);
 ////
 function work() {
   let city = document.getElementById("form").value;
