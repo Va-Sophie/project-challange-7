@@ -68,11 +68,11 @@ function displayForecast(element) {
   let weatherForDay = DaysofWeek.forEach(function day() {
     `<div class="col-sm-2" id="forecast">
         <div>
-          <span id="daysofweek">${DaysofWeek[getIndex()]}</span>
+          <span id="daysofweek">${DaysofWeek[getIndex]}</span>
         </div>
         <img
           src="https://openweathermap.org/img/wn/${
-            element.data.daily[getIndex()].weather[getIndex()].icon
+            element.data.daily[getIndex].weather[getIndex].icon
           }@2x.png"
           alt=""
           id="forecastIcon"
