@@ -61,12 +61,13 @@ function displayForecast(element) {
     let moment = new Date();
     function index(element) {
       let hours = element.getDay();
+      return hours;
     }
     let one = index(moment);
     return one;
   }
-  let weatherForDay = DaysofWeek.forEach(function day() {
-    `<div class="col-sm-2" id="forecast">
+  function day() {
+    let description = `<div class="col-sm-2" id="forecast">
         <div>
           <span id="daysofweek">${DaysofWeek[getIndex]}</span>
         </div>
@@ -81,11 +82,14 @@ function displayForecast(element) {
           <h5 class="h5">
             <span id="min">${Math.round(
               element.data.daily[getIndex].temp.min
-            )}</span> / <span id="max">${Math.round(element.data.daily[getIndex].temp.max)}</span>
+            )}</span> / <span id="max">${Math.round(
+      element.data.daily[getIndex].temp.max
+    )}</span>
           </h5>
         </div>
       </div>`;
-  });
+    return description;
+  }
   document.getElementById("displayOfIcons").innerHTML = weatherForDay;
 }
 function APIforecast(element) {
