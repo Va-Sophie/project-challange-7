@@ -60,8 +60,8 @@ function displayForecast(element) {
   function getIndex() {
     let moment = new Date();
     function index(element) {
-      let hours = element.getDay();
-      return hours;
+      let days = element.getDay();
+      return days;
     }
     let one = index(moment);
     return one;
@@ -90,7 +90,7 @@ function displayForecast(element) {
       </div>`;
     return description;
   }
-  document.getElementById("displayOfIcons").innerHTML = weatherForDay;
+  document.getElementById("displayOfIcons").innerHTML = day();
 }
 function APIforecast(element) {
   let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
