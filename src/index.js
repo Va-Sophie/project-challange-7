@@ -123,6 +123,7 @@ function work() {
   axios.get(`${ApiUrl}`).then(cityname);
   axios.get(`${ApiUrl}`).then(description);
   axios.get(`${ApiUrl}`).then(icon);
+  axios.get(`${ApiUrl}`).then(APIforecast);
 }
 document.getElementById("button-addon2").addEventListener("click", work);
 const input = document.querySelector("form");
