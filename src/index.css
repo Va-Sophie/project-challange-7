@@ -15,8 +15,8 @@
   padding-right: 10px;
 }
 .no-gutter > [class*="col-"] {
-  padding-right: 0;
   padding-left: 0;
+  padding-right: 0;
 }
 h2.h2 {
   font-size: 20px;
@@ -133,6 +133,10 @@ form {
   border: 2px solid #ff99c8;
   border-radius: 10px;
   text-align: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  left: -6px;
 }
 h5.h5 {
   font-weight: 200;
