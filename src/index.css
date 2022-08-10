@@ -119,7 +119,8 @@ form {
 #daysofweek {
   text-decoration: underline;
   text-decoration-color: #ffadad;
-  font-size: 20px;
+  margin-top: 5px;
+  font-size: 21px;
   font-weight: 400;
 }
 #min,
