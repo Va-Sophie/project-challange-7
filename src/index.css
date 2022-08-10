@@ -118,20 +118,20 @@ form {
 }
 #daysofweek {
   text-decoration: underline;
-  text-decoration-color: #ffadad;
+  text-decoration-color: #7bdff2;
   margin-top: 5px;
   font-size: 21px;
   font-weight: 400;
 }
 #min,
 #max {
-  background-color: #ffadad;
+  background-color: #7bdff2;
   padding-right: 5px;
   padding-left: 5px;
   border-radius: 10px;
 }
 #forecast {
-  border: 2px solid #ffadad;
+  border: 2px solid #7bdff2;
   border-radius: 10px;
   text-align: center;
   align-items: center;

@@ -155,7 +155,7 @@ function currentPosition(position) {
   axios.get(`${ApiUrl}`).then(cityname);
   axios.get(`${ApiUrl}`).then(description);
   axios.get(`${ApiUrl}`).then(icon);
-  axios.get(`${ApiUrl1}`).then(APIforecast);
+  axios.get(`${ApiUrl}`).then(APIforecast);
 }
 function action() {
   navigator.geolocation.getCurrentPosition(currentPosition);
