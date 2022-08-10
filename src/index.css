@@ -118,19 +118,19 @@ form {
 }
 #daysofweek {
   text-decoration: underline;
-  text-decoration-color: #ff99c8;
+  text-decoration-color: #ffadad;
   font-size: 25px;
-  font-weight: 200;
+  font-weight: 400;
 }
 #min,
 #max {
-  background-color: #ff99c8;
+  background-color: #ffadad;
   padding-right: 5px;
   padding-left: 5px;
   border-radius: 10px;
 }
 #forecast {
-  border: 2px solid #ff99c8;
+  border: 2px solid #ffadad;
   border-radius: 10px;
   text-align: center;
   align-items: center;
@@ -140,4 +140,9 @@ form {
 }
 h5.h5 {
   font-weight: 200;
+}
+div#descriptionInforecast {
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 10px;
 }

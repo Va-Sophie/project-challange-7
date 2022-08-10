@@ -55,29 +55,49 @@ function cityname(element) {
   document.getElementById("heading").innerHTML = `${name}`;
 }
 //// forecast
-function integrationOfIcons() {
+function NameOfTheDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let dayname = date.getDay();
+  let DaysofWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return DaysofWeek[dayname];
+}
+////
+////
+function integrationOfIcons(responce) {
+  let forecastobject = responce.data.daily;
   let forecast = "";
-  let DaysofWeek = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-  DaysofWeek.forEach(function (day) {
-    forecast =
-      forecast +
-      `<div class="col-sm-2" id="forecast">
+  forecastobject.forEach(function (day, index) {
+    if (index < 5) {
+      forecast =
+        forecast +
+        `<div class="col-sm-2" id="forecast">
   <div>
-    <span id="daysofweek">${day}</span>
+    <span id="daysofweek">${NameOfTheDay(day.dt)}</span>
   </div>
   <img
-    src="https://openweathermap.org/img/wn/04d@2x.png"
+    src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"
     alt=""
     id="forecastIcon"
   />
   <div>
+  <div id="descriptionInforecast">${day.weather[0].description}</div>
     <h5 class="h5">
-      <span id="min">45</span> / <span id="max">50</span>
+      <span id="min">${Math.round(
+        day.temp.min
+      )}˚</span> / <span id="max">${Math.round(day.temp.max)}˚</span>
     </h5>
   </div>
 </div>`;
+    }
   });
-
   document.getElementById("displayOfIcons").innerHTML = forecast;
 }
 
@@ -85,7 +105,7 @@ function APIforecast(element) {
   let apiKey = "0b3a182635d594d7bd1abd38c840f9c3";
   let lon = element.data.coord.lon;
   let lat = element.data.coord.lat;
-  let ApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=daily&appid=${apiKey}`;
+  let ApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(`${ApiUrl}`).then(integrationOfIcons);
 }
 ////
