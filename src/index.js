@@ -70,7 +70,6 @@ function NameOfTheDay(timestamp) {
   return DaysofWeek[dayname];
 }
 ////
-////
 function integrationOfIcons(responce) {
   let forecastobject = responce.data.daily;
   let forecast = "";
